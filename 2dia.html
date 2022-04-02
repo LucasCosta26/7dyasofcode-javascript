@@ -12,11 +12,9 @@
     }
 </style>
 <body>
-    
         <div class="vai">
             <h2 class="resp"></h2>
             <p class="tipoLingua"></p>
-            
         </div>
 
     <script> 
@@ -24,12 +22,10 @@
         let nome = window.prompt('Qual seu nome?')
         let idade = Number.parseFloat(window.prompt('Qual sua idade?'))
         let lingua = window.prompt('Qual linguagem de programação você está estudando?')
+        let estudos = window.prompt(`Você gosta de estudar ${lingua}? Responda com o número 1 para SIM e 2 para não.`)
+
 
         document.querySelector('.resp').innerHTML= `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${lingua} `
-
-        
-
-        let estudos = window.prompt(`Você gosta de estudar ${lingua}? Responda com o número 1 para SIM e 2 para não.`)
 
         if (estudos== 1) {
             document.querySelector( '.tipoLingua').innerHTML= 'Muito bom! Continue estudando e você terá muito sucesso.'
@@ -37,6 +33,7 @@
         if (estudos == 2) {
             document.querySelector( '.tipoLingua').innerHTML= 'Ahh que pena... Já tentou aprender outras linguagens?'
         }
+        
     </script>
 </body>
 </html>
