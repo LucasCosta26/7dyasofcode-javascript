@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Lucas Oliveira da Costa">
+    <title>Adivinhe o número</title>
+</head>
+<body>
+    <h3>Vamos brincar de adivinhar o número?</h3>
+    <p class="resp">Escolha um número entre 0 e 10</p>
+    <input type="number" name="numero" min="0" max="10">
+        
+    </input>
+    <button type="submit" onclick="comecar()">Enviar</button>
+    <p class="resp1"></p>
+    <p class="resp2"></p>
+    <script>
+       
+        function comecar() {
+            var numero = 7;
+            const escolhido = document.querySelector('input[type="number"]').value; 
+
+            for (let i = 0; i < array.length; i++) {
+                const element = array[i];
+                
+            }
+
+
+
+        if (escolhido == numero) {
+            document.querySelector('.resp1').innerHTML= 'voce acertou o numero';
+        }else{
+            document.querySelector('.resp1').innerHTML= 'voce errou o numero';
+
+        }
+        
+        }
+
+    </script>
+</body>
+</html>

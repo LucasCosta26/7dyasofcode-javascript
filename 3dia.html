@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Lucas Oliveira Costa" />
+    <title>3º dia de desafio JavaScript</title>
+  </head>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 150px;
+      font-size: large;
+    }
+  </style>
+  <body>
+    <h3>
+      Olá. Que tal você me contar um pouquinho sobre o que mais gosta na area de
+      desenvolvimento?? Vamos nessa?
+    </h3>
+    <p class="legal"></p>
+    <legend>Você quer seguir para área de Front-End ou Back-End?</legend>
+    <br />
+    <label
+      >Front-End
+      <input type="radio" name="tipo" class="1" id="front" value="front"
+    /></label>
+
+    <label
+      >Back-End
+      <input type="radio" name="tipo" class="2" id="back" value="back"
+    /></label>
+    <br />
+    <button onclick="comecar()">Começar</button>
+
+    <p class="resp1"></p>
+    <p class="resp2"></p>
+    <p class="resp3"></p>
+    <p class="resp4"></p>
+
+    <script>
+      function comecar() {
+        const tec = document.querySelector('input[name="tipo"]:checked').value;
+
+        if (tec === "front") {
+          document.querySelector(".resp1").innerHTML =
+            "<legend>O que você quer aprender na area de Front-End?</legend><label for='react'>React</label><input type='radio' name='aprender' id='react' value='React' /><label for='vue'>Vue</label><input type='radio' name='aprender' id='vue' value='Vue' /><br><button type='submit' onclick='especializacao()'>Escolha</button>";
+        } else {
+          document.querySelector(".resp1").innerHTML =
+            "<legend>O que você quer aprender na area de Back-End?</legend><label for='c'>C#</label><input type='radio' name='aprender' id='c' value='C#' /><label for='java'>Java</label><input type='radio' name='aprender' id='java' value='Java' /><br><button type='submit' onclick='especializacao()'>Escolha</button>";
+        }
+      }
+
+      function especializacao() {
+        const tec = document.querySelector('input[name="tipo"]:checked').value;
+
+        const espe = document.querySelector(
+          'input[name="aprender"]:checked'
+        ).value;
+
+        document.querySelector(
+          ".resp2"
+        ).innerHTML = ` <legend>E você pretende seguir se especialidando em ${espe} ou pretende tornar-se um desenvolvedor Fullstack?</legend> <br> <label> Especializar em ${espe}</label> <input type="radio" name='especializacao' class='especializar' value='frame' /> <label> Ser um desenvolvedor Fullstack </label> <input type='radio' name='especializacao' class='fullstack' value='Fullstack'/><br> <button type='submit' onclick='decidir()'>Escolha</button>`;
+      }
+
+      function decidir() {
+        const tec = document.querySelector('input[name="tipo"]:checked').value;
+
+        const espe = document.querySelector(
+          'input[name="aprender"]:checked'
+        ).value;
+        const novastec = document.querySelector(
+          'input[name="especializacao"]:checked'
+        ).value;
+        if (novastec === "Fullstack") {
+          document.querySelector(
+            ".resp3"
+          ).innerHTML = `E quais tecnologias você pretende aprender?<textarea type="text" class="textarea" id="linguas"></textarea> 
+          <br> <button type='submit' onclick='fim()'>Enviar</button> `;
+        } else {
+          document.querySelector(
+            ".resp3"
+          ).innerHTML = `${espe} é uma otima linguagem de programação. Continue assim!`;
+        }
+      }
+      function fim() {
+        const tec = document.querySelector('input[name="tipo"]:checked').value;
+
+        const espe = document.querySelector(
+          'input[name="aprender"]:checked'
+        ).value;
+        const novastec = document.querySelector(
+          'input[name="especializacao"]:checked'
+        ).value;
+        const fim = document.querySelector('.textarea').value;
+        document.querySelector(
+            ".resp4"
+          ).innerHTML = `${fim} são otimas linguagens de programação. Continue assim!`;
+      }
+    </script>
+  </body>
+</html>
