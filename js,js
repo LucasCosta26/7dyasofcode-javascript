@@ -1,0 +1,10 @@
+  function comecar () {
+        
+      var numeroCerto = 3;
+      var acertou = false;
+      const chute = document.querySelector('#numero').value;
+      for (let index = 0; index < 3; index++) {
+        if (numeroCerto == chute) {
+           document.querySelector('.test').innerHTML = 'voce acertou';
+        }}}
+
